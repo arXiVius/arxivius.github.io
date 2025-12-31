@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>arXiVius</title>
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -12,84 +11,6 @@
       rel="stylesheet"
     />
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' font-family='Climate Crisis' fill='white'>a</text></svg>" />
-    <script>
-      window.tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              'app-bg': 'var(--bg-app)',
-              'app-surface': 'var(--bg-surface)',
-              'app-surface-hover': 'var(--bg-surface-hover)',
-              'app-text': 'var(--text-main)',
-              'app-text-muted': 'var(--text-muted)',
-              'app-border': 'var(--border-main)',
-              'app-accent': 'var(--accent)',
-            },
-            fontFamily: {
-              sans: ['Inter', 'sans-serif'],
-              mono: ['JetBrains Mono', 'monospace'],
-            }
-          }
-        }
-      }
-    </script>
-    <style>
-      :root {
-        --bg-app: #050505;
-        --bg-surface: #080808;
-        --bg-surface-hover: #0a0a0a;
-        --text-main: #fafafa;
-        --text-muted: #71717a;
-        --border-main: #18181b;
-        --accent: #22c55e;
-      }
-
-      [data-theme='light'] {
-        --bg-app: #ffffff;
-        --bg-surface: #f9f9f9;
-        --bg-surface-hover: #f1f1f1;
-        --text-main: #09090b;
-        --text-muted: #71717a;
-        --border-main: #e4e4e7;
-        --accent: #16a34a;
-      }
-
-      [data-theme='colorful'] {
-        --bg-app: #0c001a;
-        --bg-surface: #1a0136;
-        --bg-surface-hover: #2d025d;
-        --text-main: #f0abfc;
-        --text-muted: #a855f7;
-        --border-main: #4c1d95;
-        --accent: #f472b6;
-      }
-
-      body {
-        background-color: var(--bg-app);
-        color: var(--text-main);
-        transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
-                    color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        font-family: 'Inter', sans-serif;
-      }
-      
-      .mono {
-        font-family: 'JetBrains Mono', monospace;
-      }
-
-      ::-webkit-scrollbar {
-        width: 8px;
-      }
-      ::-webkit-scrollbar-track {
-        background: var(--bg-app);
-      }
-      ::-webkit-scrollbar-thumb {
-        background: var(--border-main);
-        border-radius: 4px;
-      }
-      ::-webkit-scrollbar-thumb:hover {
-        background: var(--text-muted);
-      }
-    </style>
     <script type="importmap">
       {
         "imports": {

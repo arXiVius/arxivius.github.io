@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+@theme {
+  --color-app-bg: var(--bg-app);
+  --color-app-surface: var(--bg-surface);
+  --color-app-surface-hover: var(--bg-surface-hover);
+  --color-app-text: var(--text-main);
+  --color-app-text-muted: var(--text-muted);
+  --color-app-border: var(--border-main);
+  --color-app-accent: var(--accent);
+
+  --font-family-sans: "Inter", sans-serif;
+  --font-family-mono: "JetBrains Mono", monospace;
+  --font-family-climate: "Climate Crisis", sans-serif;
+}
+
+:root {
+  --bg-app: #050505;
+  --bg-surface: #080808;
+  --bg-surface-hover: #0a0a0a;
+  --text-main: #fafafa;
+  --text-muted: #71717a;
+  --border-main: #18181b;
+  --accent: #22c55e;
+}
+
+[data-theme="light"] {
+  --bg-app: #ffffff;
+  --bg-surface: #f9f9f9;
+  --bg-surface-hover: #f1f1f1;
+  --text-main: #09090b;
+  --text-muted: #71717a;
+  --border-main: #e4e4e7;
+  --accent: #16a34a;
+}
+
+[data-theme="colorful"] {
+  --bg-app: #0c001a;
+  --bg-surface: #1a0136;
+  --bg-surface-hover: #2d025d;
+  --text-main: #f0abfc;
+  --text-muted: #a855f7;
+  --border-main: #4c1d95;
+  --accent: #f472b6;
+}
+
+body {
+  background-color: var(--bg-app);
+  color: var(--text-main);
+  transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: var(--font-family-sans);
+}
+
+.mono {
+  font-family: var(--font-family-mono);
+}
+
+.climate {
+  font-family: var(--font-family-climate);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-app);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-main);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
