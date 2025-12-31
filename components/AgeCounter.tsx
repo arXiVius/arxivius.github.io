@@ -23,9 +23,9 @@ const AgeCounter: React.FC<AgeCounterProps> = ({ birthDate }) => {
 
   return (
     <div className="flex flex-col items-start">
-      <span className="text-xs uppercase tracking-widest text-zinc-500 mb-1">Current Lifetime</span>
-      <div className="text-2xl md:text-3xl font-bold mono text-zinc-100 tabular-nums">
-        {age} <span className="text-sm font-normal text-zinc-500">years</span>
+      <span className="text-xs uppercase tracking-widest text-app-text-muted mb-1">Current Lifetime</span>
+      <div className="text-2xl md:text-3xl font-bold mono text-app-text tabular-nums">
+        {age} <span className="text-sm font-normal text-app-text-muted">years</span>
       </div>
     </div>
   );

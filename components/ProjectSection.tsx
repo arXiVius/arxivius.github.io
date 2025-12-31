@@ -13,43 +13,43 @@ const ProjectSection: React.FC<ProjectSectionProps> = ({ title, subtitle, projec
   return (
     <div className="mb-20">
       <div className="flex flex-col mb-8">
-        <h2 className="text-sm uppercase tracking-[0.2em] text-zinc-500 font-medium mb-1">{title}</h2>
-        {subtitle && <p className="text-xs text-zinc-600 italic">{subtitle}</p>}
+        <h2 className="text-sm uppercase tracking-[0.2em] text-app-text-muted font-medium mb-1">{title}</h2>
+        {subtitle && <p className="text-xs text-app-text-muted italic opacity-70">{subtitle}</p>}
       </div>
       
       <div className={`grid gap-6 ${isFlagship ? 'grid-cols-1' : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'}`}>
         {projects.map((project, idx) => (
           <div 
             key={idx} 
-            className={`group relative p-6 border border-zinc-900 bg-[#080808] hover:bg-[#0a0a0a] hover:border-zinc-800 transition-all duration-300 rounded-xl overflow-hidden flex flex-col ${isFlagship ? 'p-8 md:p-12 border-zinc-800 bg-[#0a0a0a]' : ''}`}
+            className={`group relative p-6 border border-app-border bg-app-surface hover:bg-app-surface-hover hover:border-app-text-muted transition-all duration-300 rounded-xl overflow-hidden flex flex-col ${isFlagship ? 'p-8 md:p-12 border-app-text-muted/20 bg-app-surface' : ''}`}
           >
             {isFlagship && (
-              <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-white to-transparent opacity-50"></div>
+              <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-app-text to-transparent opacity-20"></div>
             )}
             
             <div className="flex justify-between items-start mb-4">
-              <h3 className={`font-bold ${isFlagship ? 'text-3xl' : 'text-xl'} text-zinc-100 group-hover:text-white transition-colors`}>
+              <h3 className={`font-bold ${isFlagship ? 'text-3xl' : 'text-xl'} text-app-text group-hover:text-app-text transition-colors`}>
                 {project.name}
               </h3>
               {project.status && (
-                <span className="px-2 py-0.5 text-[10px] bg-zinc-100 text-black font-bold uppercase rounded-sm">
+                <span className="px-2 py-0.5 text-[10px] bg-app-text text-app-bg font-bold uppercase rounded-sm">
                   {project.status}
                 </span>
               )}
             </div>
             
-            <p className={`text-zinc-400 leading-relaxed mb-6 ${isFlagship ? 'text-lg max-w-2xl' : 'text-sm'}`}>
+            <p className={`text-app-text-muted leading-relaxed mb-6 ${isFlagship ? 'text-lg max-w-2xl text-app-text/80' : 'text-sm'}`}>
               {project.description}
             </p>
 
             <div className="flex flex-wrap gap-2 mb-6">
               {project.api && (
-                <span className="text-[10px] px-2 py-0.5 border border-zinc-800 text-zinc-500 rounded uppercase tracking-wider">
+                <span className="text-[10px] px-2 py-0.5 border border-app-border text-app-text-muted rounded uppercase tracking-wider">
                   API: {project.api}
                 </span>
               )}
               {project.type && (
-                <span className="text-[10px] px-2 py-0.5 border border-zinc-800 text-zinc-500 rounded uppercase tracking-wider">
+                <span className="text-[10px] px-2 py-0.5 border border-app-border text-app-text-muted rounded uppercase tracking-wider">
                   {project.type}
                 </span>
               )}
@@ -61,7 +61,7 @@ const ProjectSection: React.FC<ProjectSectionProps> = ({ title, subtitle, projec
                   href={project.url} 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-xs font-bold text-zinc-100 hover:text-white transition-all bg-zinc-900 px-3 py-1.5 rounded-lg border border-zinc-800 group-hover:border-zinc-600"
+                  className="inline-flex items-center gap-2 text-xs font-bold text-app-bg bg-app-text hover:opacity-90 transition-all px-3 py-1.5 rounded-lg border border-transparent shadow-sm"
                 >
                   Open App
                   <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -74,7 +74,7 @@ const ProjectSection: React.FC<ProjectSectionProps> = ({ title, subtitle, projec
                   href={`https://github.com/arxivius/${project.repo}`} 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-xs font-medium text-white/50 hover:text-white underline decoration-white/10 underline-offset-4 transition-all"
+                  className="text-xs font-medium text-app-text-muted hover:text-app-text underline decoration-app-text-muted/20 underline-offset-4 transition-all"
                 >
                   Source Code
                 </a>
