@@ -17,8 +17,11 @@ const App: React.FC = () => {
     // Update favicon color based on theme
     const favicon = document.querySelector('link[rel="icon"]') as HTMLLinkElement;
     if (favicon) {
-      const color = theme === 'light' ? '%23000000' : theme === 'colorful' ? '%23f472b6' : '%23ffffff';
-      favicon.href = `data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' font-family='Climate Crisis' fill='${color}'>a</text></svg>`;
+      const bgColor = theme === 'light' ? '%23000000' : theme === 'colorful' ? '%231a0136' : '%23ffffff';
+      const textColor = theme === 'light' ? '%23ffffff' : theme === 'colorful' ? '%23f472b6' : '%23000000';
+      
+      // Use a rounded rect container for the "a" to ensure it's always visible and centered
+      favicon.href = `data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='${bgColor}'/><text x='50%' y='65%' font-size='70' font-family='Climate Crisis' fill='${textColor}' text-anchor='middle' dominant-baseline='middle'>a</text></svg>`;
     }
   }, [theme]);
 
