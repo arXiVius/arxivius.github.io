@@ -13,6 +13,13 @@ const App: React.FC = () => {
   React.useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem('app-theme', theme);
+    
+    // Update favicon color based on theme
+    const favicon = document.querySelector('link[rel="icon"]') as HTMLLinkElement;
+    if (favicon) {
+      const color = theme === 'light' ? '%23000000' : theme === 'colorful' ? '%23f472b6' : '%23ffffff';
+      favicon.href = `data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' font-family='Climate Crisis' fill='${color}'>a</text></svg>`;
+    }
   }, [theme]);
 
   const toggleTheme = () => {
